@@ -8,7 +8,8 @@ const app = express()
 
 app.use(
     cors({
-        origin: process.env.CLIENT_URL || 'http://localhost:3000',
+        origin:process.env.CORS_ORIGIN,
+        credentials:true
     })
 )
 app.use(express.json({ limit: '2mb' }))
