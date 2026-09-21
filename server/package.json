@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "src/server.js",
-    "start": "src/server.js"
+    "dev": "node --import dotenv/config src/server.js",
+    "start": "node --import dotenv/config src/server.js"
   },
   "keywords": [],
   "author": "",
