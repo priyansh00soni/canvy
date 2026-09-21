@@ -18,7 +18,7 @@ app.get('/health', (req, res) => {
     res.status(200).json({ success: true, message: 'OK' })
 })
 
-app.use('/api/canvases', canvasRoutes)
+app.use('/api/v1/canvases', canvasRoutes)
 
 app.use(notFound)
 app.use(errorHandler)
