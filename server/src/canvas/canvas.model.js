@@ -47,8 +47,15 @@ const canvasSchema = new Schema(
         width: { type: Number, default: 800, min: 1 },
         height: { type: Number, default: 600, min: 1 },
         elements: { type: [elementSchema], default: [] },
+        owner: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+            required: true,
+            index: true,
+        },
     },
     { timestamps: true }
 )
+
 
 export const Canvas = mongoose.model('Canvas', canvasSchema)

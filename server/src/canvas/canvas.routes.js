@@ -2,8 +2,11 @@ import { Router } from 'express'
 import * as canvasController from './canvas.controller.js'
 import {createCanvasSchema,updateCanvasSchema} from './canvas.validationSchema.js'
 import validateBody from '../middleware/validateBody.js'
+import authenticate from '../middleware/authenticate.js'
 
 const canvasRouter = Router()
+
+canvasRouter.use(authenticate)
 
 canvasRouter
     .route('/')
