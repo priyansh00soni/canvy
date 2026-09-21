@@ -4,6 +4,8 @@ const errorHandler = (error, req, res, next) => {
     let apiError = error
 
     if (!(apiError instanceof ApiError)) {
+        if (error.name === 'JsonWebTokenError') return response.status(401).json({ success: false, message: 'Invalid token', errors: [], data: null })
+        if (error.name === 'TokenExpiredError') return response.status(401).json({ success: false, message: 'Session expired, please log in again', errors: [], data: null })
         if (error.name === 'ValidationError') {
             const validationMessages = Object.values(error.errors).map((fieldError) => fieldError.message)
             apiError = new ApiError(400, 'Validation failed', validationMessages)

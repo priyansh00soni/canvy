@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
-import canvasRoutes from './canvas/canvas.routes.js'
+import canvasRouter from './canvas/canvas.routes.js'
+import authRouter from './auth/auth.routes.js'
 import notFound from './middleware/notFound.js'
 import errorHandler from './middleware/errorHandler.js'
 
@@ -18,7 +19,8 @@ app.get('/health', (req, res) => {
     res.status(200).json({ success: true, message: 'OK' })
 })
 
-app.use('/api/v1/canvases', canvasRoutes)
+app.use('/api/v1/auth', authRouter)
+app.use('/api/v1/canvases', canvasRouter)
 
 app.use(notFound)
 app.use(errorHandler)
