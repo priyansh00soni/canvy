@@ -103,7 +103,3 @@ export const updateCanvasSchema = z.object({
         elements: z.array(shapeSchema).max(500),
     }).partial()
     .refine((data) => Object.keys(data).length > 0, { message: 'Send at least one field to update' })
-
-export const googleLoginSchema = z.object({
-  idToken: z.string().min(1, 'Google ID token is required'),
-})
