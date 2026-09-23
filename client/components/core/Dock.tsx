@@ -2,7 +2,6 @@
 
 import React, { useRef } from 'react'
 import { motion, useMotionValue, useSpring, useTransform, MotionValue } from 'framer-motion'
-import clsx from 'clsx'
 import styles from './Dock.module.css'
 
 export interface DockProps {
@@ -17,7 +16,7 @@ export function Dock({ className, children }: DockProps) {
     <div
       onMouseMove={(e) => mouseY.set(e.clientY)}
       onMouseLeave={() => mouseY.set(Infinity)}
-      className={clsx(styles.dock, className)}
+      className={`${styles.dock}${className ? ` \${className}` : ''}`}
     >
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
@@ -61,11 +60,18 @@ export function DockItem({ className, children, mouseY, isActive, onClick, ...pr
   const widthSync = useTransform(distanceCalc, [-100, 0, 100], [40, 60, 40])
   const width = useSpring(widthSync, { mass: 0.1, stiffness: 200, damping: 15 })
 
+  // Construct the class string cleanly without external dependencies
+  const computedClassName = [
+    styles.dockItem,
+    isActive ? styles.dockItemActive : '',
+    className || ''
+  ].filter(Boolean).join(' ')
+
   return (
     <motion.button
       ref={ref}
       style={{ width, height: width }}
-      className={clsx(styles.dockItem, isActive && styles.dockItemActive, className)}
+      className={computedClassName}
       onClick={onClick}
       {...props}
     >
