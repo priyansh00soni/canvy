@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-const hexColor = z.string().regex(/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/, 'Must be a hex color like #ff0000')
+const hexColor = z.string().regex(/^#([0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/, 'Must be a hex color like #ff0000 or #ff0000ff')
 
 const rectangleSchema = z.object({
     id: z.string(),

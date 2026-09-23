@@ -61,7 +61,7 @@ export default function PropertiesPanel({ tool, selectedElement, onChange, penSe
         <input
           type="color"
           className={styles.colorPickerInput}
-          value={value}
+          value={(value || '#000000').substring(0, 7)}
           onChange={(e) => {
             if (field === 'globalStroke' && penSettings && onPenSettingsChange) {
               onPenSettingsChange({ ...penSettings, strokeColor: e.target.value })
