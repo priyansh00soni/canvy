@@ -2,6 +2,11 @@
 
 ### A quieter way to design.
 
+**Live Links:**
+- Frontend: [https://canvyy.vercel.app/](https://canvyy.vercel.app/)
+- Backend API: [https://canvy.onrender.com](https://canvy.onrender.com)
+- Backend Health Check: [https://canvy.onrender.com/health](https://canvy.onrender.com/health)
+
 A small browser-based design editor for creating simple canvases with rectangles, circles, and text.
 
 Edit as a guest without an account. Sign in with Google only when you want to save your work.
