@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-page-canvas: #f7f5f2;
+  --color-surface: #ffffff;
+  --color-warm-surface: #f2efeb;
+  --color-ink: #15161a;
+  --color-ink-secondary: #615d59;
+  --color-ink-muted: #8a8782;
+  --color-hairline: #e6e1dc;
+  --color-accent: #4056e8;
+  --color-accent-hover: #3346c9;
+  --color-accent-tint: #edeffc;
+  --color-artwork-lavender: #dadfff;
+  --color-artwork-sage: #a7c3ac;
+  --color-artwork-peach: #e9ad8e;
+  --color-danger: #c8402f;
+  --color-success: #4c8c5b;
+
+  --font-display: 'Inter', ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-ui: 'Inter', ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+
+  --radius-control: 7px;
+  --radius-button: 10px;
+  --radius-surface: 16px;
+  --radius-editorial: 22px;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-page-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-variant-numeric: tabular-nums;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: var(--color-accent-tint);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: -48px;
+  z-index: 200;
+  padding: 8px 12px;
+  border-radius: var(--radius-control);
+  background: var(--color-ink);
+  color: var(--color-surface);
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
