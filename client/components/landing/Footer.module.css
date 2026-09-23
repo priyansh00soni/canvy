@@ -1,0 +1,150 @@
+.footer {
+  background: #ffffff;
+  border-top: 1px solid var(--color-hairline);
+  overflow: hidden;
+}
+
+.top {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 72px 64px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: end;
+}
+
+@media (max-width: 860px) {
+  .top {
+    grid-template-columns: 1fr;
+    padding: 56px 32px 40px;
+  }
+}
+
+.topLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+  margin: 0 0 10px;
+  font-weight: 500;
+}
+
+.headline {
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin: 0 0 16px;
+  color: var(--color-ink);
+}
+
+@media (max-width: 640px) { .headline { font-size: 30px; } }
+
+.ctaGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-accent);
+  transition: opacity 0.15s ease;
+}
+
+.cta:hover { opacity: 0.8; }
+
+/* ---- CANVY Watermark Illustration ---- */
+.topRight {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footerImage {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ---- Bottom bar ---- */
+.bottom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 18px 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--color-hairline);
+}
+
+@media (max-width: 720px) { .bottom { padding: 16px 32px; } }
+
+@media (max-width: 560px) {
+  .bottom {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 24px 16px;
+  }
+  .nav {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
+.bottomBrand {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-ink-secondary);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 13px;
+  color: var(--color-ink-secondary);
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.nav a:hover { color: var(--color-ink); }
+
+.githubBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-ink);
+  color: #ffffff !important;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: opacity 0.15s ease;
+}
+
+.githubBtn:hover {
+  opacity: 0.85;
+}
+
+.themeIcon {
+  color: var(--color-ink-muted);
+  display: flex;
+  align-items: center;
+}
