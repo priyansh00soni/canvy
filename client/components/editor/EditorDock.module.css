@@ -1,0 +1,64 @@
+.dockContainer {
+  position: absolute;
+  top: 50%;
+  left: 24px;
+  transform: translateY(-50%);
+  z-index: 50;
+  pointer-events: none; /* Let clicks pass through container */
+}
+
+.dockOverrides {
+  /* Magic UI defaults applied via CSS modules */
+  padding-right: 12px;
+}
+
+.divider {
+  width: 24px;
+  height: 1px;
+  background: var(--color-hairline);
+  margin: 4px 0;
+  align-self: center;
+}
+
+.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.shortcutBadge {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--color-ink-secondary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-hairline);
+  padding: 1px 4px;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .dockContainer {
+    top: auto;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .dockOverrides {
+    padding-right: 12px; /* Reset */
+  }
+
+  .divider {
+    width: 1px;
+    height: 24px;
+    margin: 0 4px;
+    flex-shrink: 0;
+  }
+}
