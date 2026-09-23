@@ -1,0 +1,280 @@
+.section {
+  padding: 80px 0;
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 64px;
+}
+
+@media (max-width: 720px) { .inner { padding: 0 32px; } }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+@media (max-width: 860px) {
+  .grid { grid-template-columns: 1fr; gap: 48px; }
+}
+
+.step { min-width: 0; }
+
+.stepNumber {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--color-accent);
+  margin: 0 0 8px;
+  font-weight: 500;
+}
+
+.stepTitle {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+  color: var(--color-ink);
+}
+
+.stepBody {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-ink-secondary);
+  margin: 0 0 18px;
+}
+
+/* ---- Cards ---- */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-surface);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(21, 22, 26, 0.04);
+}
+
+.cardContent { position: relative; }
+
+/* ---- Create card ---- */
+.miniToolbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 0;
+  border-right: 1px solid var(--color-hairline);
+  background: var(--color-surface);
+  z-index: 2;
+}
+
+.miniToolActive {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background: var(--color-accent);
+  color: #ffffff;
+}
+
+.miniToolIcon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: var(--color-ink-secondary);
+}
+
+.miniToolDots {
+  display: flex;
+  gap: 2px;
+  margin-top: 4px;
+}
+
+.miniToolDots span {
+  width: 2.5px;
+  height: 2.5px;
+  border-radius: 50%;
+  background: var(--color-ink-muted);
+}
+
+.miniCanvas {
+  position: relative;
+  min-height: 180px;
+  margin-left: 34px;
+  background: var(--color-warm-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addTooltip {
+  position: absolute;
+  top: 30px;
+  left: 12px;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-size: 9px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.miniCircle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--color-artwork-lavender);
+}
+
+.miniCursor {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+}
+
+/* ---- Shape card ---- */
+.shapeCanvas {
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-warm-surface);
+  padding: 24px;
+}
+
+.shapeRect {
+  width: 120px;
+  height: 80px;
+  background: #8495F5;
+  border-radius: 4px;
+  transform: rotate(-12deg);
+  position: relative;
+  border: 1.5px solid var(--color-accent);
+}
+
+.handleTL, .handleTR, .handleBL, .handleBR {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: #ffffff;
+  border: 1.5px solid var(--color-accent);
+  border-radius: 2px;
+}
+
+.handleTL { top: -4px; left: -4px; }
+.handleTR { top: -4px; right: -4px; }
+.handleBL { bottom: -4px; left: -4px; }
+.handleBR { bottom: -4px; right: -4px; }
+
+.shapeLabelRotation {
+  position: absolute;
+  top: 20px;
+  right: 36px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-ink-muted);
+}
+
+/* ---- Keep card ---- */
+.keepHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.keepSaveBtn {
+  font-size: 10px;
+  font-weight: 500;
+  color: #ffffff;
+  background: var(--color-accent);
+  padding: 3px 10px;
+  border-radius: var(--radius-control);
+}
+
+.keepSaved {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  color: var(--color-success);
+  font-weight: 500;
+}
+
+.keepFields {
+  display: flex;
+  gap: 4px;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.keepField {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--color-ink-secondary);
+  border: 1px solid var(--color-hairline);
+  border-radius: 4px;
+  padding: 2px 5px;
+  background: var(--color-warm-surface);
+}
+
+.keepField em {
+  font-style: normal;
+  color: var(--color-ink-muted);
+  margin-right: 2px;
+}
+
+.canvasList { padding: 8px 10px; }
+
+.canvasListTitle {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0 0 8px;
+}
+
+.canvasItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+}
+
+.canvasItem + .canvasItem {
+  border-top: 1px solid var(--color-hairline);
+  padding-top: 8px;
+}
+
+.canvasThumb {
+  width: 26px;
+  height: 26px;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+.canvasName {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-ink);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.canvasDate {
+  font-size: 9.5px;
+  color: var(--color-ink-muted);
+  margin: 1px 0 0;
+}
