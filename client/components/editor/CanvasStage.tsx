@@ -187,7 +187,7 @@ export default function CanvasStage({
     }
 
     if (element.type === 'pen') {
-      const newPoints = element.points.map((p, index) => {
+      const newPoints = (element.points || []).map((p, index) => {
         return index % 2 === 0 ? p * scaleX : p * scaleY
       })
       const averageScale = (Math.abs(scaleX) + Math.abs(scaleY)) / 2
