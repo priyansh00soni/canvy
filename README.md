@@ -246,7 +246,7 @@ cp .env.example .env.local
 Configure:
 
 ```text
-NEXT_PUBLIC_GOOGLE_CLIENT_ID
+GOOGLE_CLIENT_ID
 ```
 
 Then start the frontend:

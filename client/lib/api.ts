@@ -1,6 +1,6 @@
 import { getStoredToken, clearStoredToken } from './token'
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1'
+const API_URL = process.env.API_URL || 'http://localhost:5000/api/v1'
 
 // Matches the backend's fixed response envelope. On success "data" carries
 // the payload. On failure "message" is meant to be shown to the user and
