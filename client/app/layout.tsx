@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+// @ts-ignore -- allow Next.js global stylesheet imports without CSS typings.
 import './globals.css'
 import Providers from './providers'
 import { Analytics } from "@vercel/analytics/next"
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         <Providers>{children}</Providers>
+        <Analytics />
       </body>
     </html>
   )
